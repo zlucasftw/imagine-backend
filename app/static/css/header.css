@@ -1,0 +1,105 @@
+@import url('https://fonts.cdnfonts.com/css/john-lennon');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+*, 
+*::before,
+ *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow-x: hidden; */
+}
+
+#navbar {
+    width: 1920px;
+    position: fixed;
+    background-color: #000000;
+    top: 0;
+    height: 75px;
+    box-shadow: .5px 0 1rem #f6f6f81a;
+    z-index: 99999;
+    
+}
+
+#navbar nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navbar nav .logo a {
+    font-family: 'JohnLennon', sans-serif;
+    text-decoration: none;
+    color: #F6F6F8;   
+    font-weight: 300;
+    font-size: xx-large;
+    margin: 0 0 0 5rem;    
+}
+
+/* #navbar nav .logo a:hover {
+    border: 1px solid linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+} */
+
+#navbar nav ul {
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    font-family: 'Dosis', sans-serif;
+    color: #F6F6F8;
+    margin: 0 2rem 0 0;
+}
+
+#navbar nav li {
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: large;
+    border: 1px solid #F6F6F8;
+    border-radius: 0.3rem;
+    
+}
+
+#navbar nav li a {
+    color: #F6F6F8;
+    text-decoration: none;
+}
+
+#navbar nav li:hover {
+/*     border-image;: 1px solid 
+    color: transparent; */
+    /* background: linear-gradient(#F6F6F8, #000000), padding-box,
+    linear-gradient(to right, darkblue, darkorchid) border-box; */
+    /* border-style: solid; */
+    /* border-image: linear-gradient(to right, darkblue, dark) 1; */
+    /* border: 1px solid ; */
+    background: linear-gradient(#000000, #000000) padding-box,
+    linear-gradient(to right, #120075, #0077ff) border-box;
+    border-radius: 0.3rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+#navbar nav .pagina-atual {
+    background: linear-gradient(#000000, #000000) padding-box,
+    linear-gradient(to right, #120075, #0077ff) border-box;
+    border-radius: 0.3rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 390px) {
+    #navbar {
+        width: 390px;
+    }
+
+    #navbar nav .logo a {
+        font-size: medium;
+        margin: 0 0 0 2.5rem;
+    }
+
+    #navbar nav li {
+        margin: 0.3rem 0 0 0.1rem;
+        padding: 0.2rem 0.4rem;
+        font-size: x-small;
+    }
+}

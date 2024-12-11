@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap');
+
+
+#navbar nav .pagina-atual {
+    background: linear-gradient(#000000, #000000) padding-box,
+    linear-gradient(to right, #120075, #0077ff) border-box;
+    /* background: linear-gradient(to right, #120075, #0077ff) padding-box; */
+    border: 1px solid linear-gradient(to right, #120075, #0077ff) padding-box;
+}
+
+.conteudo-banda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* bottom: 20%; */
+    margin: 6rem 0 1rem .5rem;
+    animation: appear_on_scroll linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+}
+
+.conteudo-banda .imagem-banda {
+    margin: 0 1rem 0 0;
+    padding: 0;
+}
+
+.conteudo-banda .imagem-banda img {
+    width: 690px;
+    height: 720px;
+    object-fit: cover;
+    border-radius: 1rem;
+    image-rendering: optimizeQuality;
+}
+
+.conteudo-banda .texto-banda {
+    width: 1108px;
+    height: 720px;
+    display: block;
+    font-family: 'Signika', sans-serif;
+    font-size: 1.5rem;
+    text-wrap: wrap;
+    margin: 0 0 0 2rem;
+    /* text-align: start;
+    margin-inline: auto;
+    overflow: hidden;
+    white-space: wrap;
+    border-right: 1px solid transparent;
+    animation: typing 2.3s steps(55) forwards, blink 0.1ms step-end infinite; */
+}
+
+/* .conteudo-banda .texto-banda h1 {
+    text-align: center;
+} */
+.conteudo-banda .texto-banda .banda-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 0; */
+}
+
+.conteudo-banda .texto-banda .banda-logo img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.conteudo-banda .texto-banda .banda-logo img:nth-child(2) {
+    /* width: 500px; */
+}
+
+.conteudo-banda .texto-banda p {
+    /* max-height: 50vh; */
+    /*  margin-inline: auto;
+    overflow: hidden;
+    white-space: wrap;
+    border-right: 1px solid transparent;
+    animation: typing 3s steps(30) forwards, blink 0.1ms step-end infinite; */
+    font-family: 'Signika', sans-serif;
+    font-size: 1.5rem;
+    text-wrap: wrap;
+    text-align: start;
+    /* margin: 5rem 0 0 0; */
+}
+
+/* p:nth-child(2) {
+    margin: 3rem 0 0 0;
+    text-decoration: line-through;
+}
+ */
+
+p:nth-child(3) {
+    margin: 3rem 0 0 0;
+}
+
+
+@keyframes typing {
+    from {
+        width: 0;
+        height: 0;
+    }
+
+    to {
+        width: 100%;
+        max-height: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+.album-banda {
+    /* width: 1920px; */
+    /* height: 360px; */
+    display: flex;
+    /* justify-content: space-bet; */
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    margin: 3rem 1rem 2rem 1rem;
+    animation: appear_on_scroll linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 20%;
+}
+
+.album-banda .album {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 .1rem 0 .1rem;
+    /* border: 1px solid #000000; */
+}
+
+.album-banda .imagem-album img {
+    width: 360px;
+    height: 360px;
+    object-fit: contain;
+    border-radius: 1rem;
+    padding: 0;
+    /* border: 1px solid #000000; */
+    /* margin: 0 0 1rem 0; */
+}
+
+.album-banda .album-descricao {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin: 1rem 0 1rem 0;
+    font-family: Circular;
+}
+
+.ablum-banda .album-descricao .album-titulo {
+    /* font-family: Circular-Black; */
+}
+
+.album-banda .album-descricao .album-genero {
+    text-align: center;
+    /* font-family: Circular; */
+}
+
+
+/* @view-transition {
+    navigation: auto;
+} */
+
+@keyframes appear_on_scroll {
+    from {
+        opacity: 0;
+        /* scale: 0.5; */
+        /* clip-path: isnet(100% 100% 0 0); */
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        /* scale: 1; */
+        /* clip-path: inset(0 0 0 0); */
+        transform: translateX(0px);
+    }
+}
+
+@font-face {
+    font-family: Circular;
+    src: url('/font/circular-std-medium-500.ttf');
+}
+
+/* @font-face {
+    font-family: Circular-Bold;
+    src: url('/font/CircularSpotifyText-Bold.otf');
+} */
+
+@media screen and (max-width: 390px) {
+    .conteudo-banda {
+        margin: 6rem 2rem 2rem 0.1rem;
+    }
+
+    .conteudo-banda .imagem-banda {
+        margin: 0 5rem 0 0;
+    }
+
+    .conteudo-banda .imagem-banda img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .conteudo-banda .texto-banda {
+        width: 50px;
+        height: 30px;
+    }
+
+    .conteudo-banda .texto-banda .banda-logo img {
+        width: 80px;
+        width: 80px;
+    }
+
+    .conteudo-banda .texto-banda p {
+        font-size: .4rem;
+        text-wrap: wrap;
+    }
+
+    p:nth-child(3) {
+        margin: 1rem 0 0 0;
+    }
+
+    .album-banda {
+        margin: 1rem .5rem 1rem .5rem;
+    }
+
+    /* .album-banda .album {
+        margin: ;
+    } */
+
+    .album-banda .imagem-album img {
+        width: 150px;
+        height: 150px;
+    }
+
+}

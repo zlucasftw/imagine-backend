@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagine</title>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
+    <!-- <meta name="view-transition" content="same-origin"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    
+</head>
+<body>
+    
+    <header id="navbar">
+        <nav>
+            <h1 class="logo">
+                <a href="#">Imagine</a>
+            </h1>
+            <ul>
+                <li class="pagina-atual"><a href="index.html">Ínicio</a></li>
+                <li><a href="/bandas">Bandas</a></li>
+                <li>Músicas</li>
+                <li>Filmes</li>
+                <li>Artistas</li>
+                <li>Sobre</li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="banner" aria-label="Carousel de imagens de bandas">
+        <section class="carousel" data-carousel>
+            <!-- <h1>Músicas</h1> -->
+            <button class="botao-carousel anterior" data-botao-carousel="anterior">&#10094;</button>
+            <button class="botao-carousel proximo" data-botao-carousel="proximo">&#10095;</button>
+            <ul data-slides>
+                <li class="slide" data-ativo>
+                    <img src="img/musicasbannerimg01.webp" alt="Imagem da banda Metallica" class="imagem_carousel">
+                </li>
+                <li class="slide">
+                    <img src="img/musicasbannerimg02.webp" alt="Imagem do cantor Ryan Karazija" class="imagem_carousel">
+                </li>
+                <li class="slide">
+                    <img src="img/musicasbannerimg03.webp" alt="Imagem da banda Paramore" class="imagem_carousel">
+                </li>
+                <li class="slide">
+                    <img src="img/musicasbannerimg04.webp" alt="Imagem da banda The Beatles" class="imagem_carousel">
+                </li>
+            </ul>
+            
+        </section>
+    </section>
+
+    <section class="cards">
+        {% for album in album_cards  %}
+        <section class="card">
+            <section class="card_image">
+                <img src="{{ album.imagem_url }}" alt="{{ album.alt_text }}">
+            </section>
+            <h1>{{ album.titulo }} - {{ album.ano }}</h1>
+            <h2>{{ album.banda }}</h2>
+        </section>
+        {% endfor %}
+        <section class="card">
+            <section class="card_image">
+                <img src="img/albumcards02.webp" alt="Imagem do album Black Album da banda Metallica">
+            </section>
+            <h1>Black Album - 1991</h1>
+            <h2>Metallica</h2>
+        </section>
+        <section class="card">
+            <section class="card_image">
+                <img src="img/albumcards03.webp" alt="Imagem do album Let It Be da banda The Beatles">
+            </section>
+            <h1>Let it Be - 1970</h1>
+            <h2>The Beatles</h2>
+        </section>
+        <section class="card">
+            <section class="card_image">
+                <img src="img/albumcards04.webp" alt="Imagem do album This is Why da banda Paramore">
+            </section>
+            <h1>Maybe Tomorrow - 2021</h1>
+            <h2>Low Roar</h2>
+        </section>
+    </section>
+
+    <section class="ver-mais">
+        <button><a href="bandas.html">Ver Mais</a></button>
+    </section>
+
+<!--     <section class="parallax">
+        <header>
+            <img src="img/Remove background project(4).png" alt="" class="fundo">
+            <img src="img/Remove background project(2).png" alt="" class="frente">
+            <div class="citacao">
+                <blockquote >
+                    <q>
+                        If I were not a physicist,
+                        I would probably be a musician.
+                        I often think in music. I live my daydreams in music.
+                        I see my life in terms of music.
+                    </q>
+                    <footer>
+                        <cite>- Albert Einstein</cite>
+                    </footer>
+                </blockquote>
+            </div>
+        </header> -->
+        <!-- <section>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus sint
+            esse praesentium rerum labore aperiam cupiditate at enim sed, facere
+            nobis unde optio aliquam repudiandae? Libero dolorum impedit
+            reprehenderit odit qui mollitia aliquam dolorem perspiciatis, nobis
+            voluptas at totam in, ducimus quibusdam ex aut sequi maxime quod non
+            nesciunt dicta explicabo corporis deleniti harum. Nisi recusandae
+            voluptatum omnis magnam fugit! Maiores sunt quidem sint natus est
+            ratione nisi asperiores iusto repellat nihil, minima vero nulla cum modi
+            eum quibusdam consequuntur facilis molestiae quos sapiente? Nemo
+            voluptates cupiditate velit corporis nobis. Accusamus provident
+            corporis, sint vitae qui quidem possimus minus totam quasi, eveniet
+            dolore, repudiandae quod? Minima cum blanditiis qui, dolore
+            necessitatibus ipsa ab maiores impedit pariatur ex tempora dolorem
+            temporibus sapiente voluptatibus expedita, odio voluptatem tempore
+            possimus veniam quia culpa? Voluptas maxime molestiae consequatur
+            quisquam ipsum perferendis commodi, corporis repudiandae! Cumque
+            expedita quod doloremque porro nobis placeat. Asperiores aliquam
+            laboriosam consequuntur reiciendis quo error nihil ipsam odio culpa
+            quibusdam? Quod iure nemo aliquam non earum dolore fugiat sint nostrum
+            recusandae ad vero consectetur, impedit amet quisquam quibusdam corporis
+            sed ipsa deleniti distinctio veritatis dolorum unde praesentium dicta
+            commodi. Nobis consequuntur laboriosam cupiditate aliquid accusamus
+            veritatis quam quibusdam ad illo laudantium debitis optio natus ex,
+            nesciunt explicabo, dolore porro molestias. Fugit facere molestiae,
+            neque obcaecati, voluptates quaerat vero doloremque autem dolore sequi
+            accusamus numquam quae nam nemo doloribus et officia, enim expedita
+            perspiciatis. Praesentium, vero, qui alias doloremque deleniti,
+            asperiores dolor cumque architecto ipsa quod placeat voluptas mollitia
+            incidunt repellendus soluta obcaecati quis recusandae saepe
+            exercitationem doloribus ratione inventore maiores quaerat reiciendis?
+            Quas, nostrum cumque officiis dolores reiciendis quae debitis autem
+            alias eligendi fugiat deserunt quasi nisi sapiente neque amet commodi
+            aperiam repellat rerum reprehenderit vitae quibusdam? Animi ipsam
+            voluptas optio veritatis, repudiandae mollitia vel quasi cumque quisquam
+            necessitatibus a qui.
+        </section> -->
+<!--     </section> -->
+<section class="imagens-scroll">
+    <section class="imagens-marquee">
+
+        <section class="marquee item1">
+            <img src="img/marqueeimg01.webp" alt="">
+        </section>
+
+        <section class="marquee item2">
+            <img src="img/marqueeimg02.webp" alt="">
+        </section>
+
+        <section class="marquee item3">
+            <img src="img/marqueeimg03.webp" alt="">
+        </section>
+
+        <section class="marquee item4">
+            <img src="img/marqueeimg04.webp" alt="">
+        </section>
+
+        <section class="marquee item5">
+            <img src="img/marqueeimg05.webp" alt="">
+        </section>
+
+        <section class="marquee item6">
+            <img src="img/marqueeimg06.webp" alt="">
+        </section>
+
+        <section class="marquee item7">
+            <img src="img/marqueeimg07.webp" alt="">
+        </section>
+
+        <section class="marquee item8">
+            <img src="img/marqueeimg08.webp" alt="">
+        </section>
+
+        <section class="marquee item9">
+            <img src="img/marqueeimg09.webp" alt="">
+        </section>
+        
+    </section>
+</section>
+    <section id="banner" aria-label="Carousel de imagens de filmes">
+        <section class="carousel" data-carousel>
+            <!-- <h1>Filmes</h1> -->
+            <button class="botao-carousel anterior" data-botao-carousel="anterior">&#10094;</button>
+            <button class="botao-carousel proximo" data-botao-carousel="proximo">&#10095;</button>
+            <ul data-slides>
+                <li class="slide" data-ativo>
+                    <img src="img/filmesbannerimg01.webp" alt="Imagem do filme Brilho Eterno de Uma Mente sem Lembranças" class="imagem_carousel">
+                </li>
+                <li class="slide">
+                    <img src="img/filmesbannerimg02.webp" alt="Imagem do filme Memento" class="imagem_carousel">
+                </li>
+                <li class="slide">
+                    <img src="img/filmesbannerimg03.webp" alt="Imagem do filme Curtindo a Vida Adoidado" class="imagem_carousel">
+                </li>
+                <li class="slide">
+                    <img src="img/filmesbannerimg04.webp" alt="Imagem do filme Psicose" class="imagem_carousel">
+                </li>
+            </ul>
+            
+        </section>
+    </section>
+
+    <section class="cards">
+        <section class="card">
+            <section class="card_image">
+                <img src="img/filmecards01.webp" alt="Imagem do poster do filme Brilho Eterno de Uma Mente sem Lembranças">
+            </section>
+            <h1>Brilho Eterno de Uma Mente sem Lembranças - 2004</h1>
+            <h2>Michael Gondry</h2>
+        </section>
+        <section class="card">
+            <section class="card_image">
+                <img src="img/filmecards02.webp" alt="Imagem do poster do filme Memento">
+            </section>
+            <h1>Memento - 2000</h1>
+            <h2>Christopher Nolan</h2>
+        </section>
+        <section class="card">
+            <section class="card_image">
+                <img src="img/filmecards03.webp" alt="Imagem do poster do filme Curtindo a Vdia Adoidado">
+            </section>
+            <h1>Curtindo a Vida Adoidado - 1986</h1>
+            <h2>John Hughes</h2>
+        </section>
+        <section class="card">
+            <section class="card_image">
+                <img src="img/filmecards04.webp" alt="Imagem do poster do filme Psicose">
+            </section>
+            <h1>Psicose - 1960</h1>
+            <h2>Alfred Hitchcock</h2>
+        </section>
+    </section>
+
+    <section class="ver-mais">
+        <button><a href="">Ver Mais</a></button>
+    </section>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>
