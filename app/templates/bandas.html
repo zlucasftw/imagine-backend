@@ -27,14 +27,14 @@
 
     <main>
         <section class="conteudo-banda">
-            <section class="imagem-banda">
-                <img src="img/bandaimg01.webp" alt="Imagem dos integrantes da banda The Beatles">
+            <!-- <section class="imagem-banda">
+                <img src="/static/img/banda/bandaimg01.webp" alt="Imagem dos integrantes da banda The Beatles">
             </section>
 
             <section class="texto-banda">
-<!--                 <h1>
+                <h1>
                     The Beatles
-                </h1> -->
+                </h1>
                 <section class="banda-logo">
                     <img src="img/beatleslogo.webp" alt="Logo da banda The Beatles">
                 </section>
@@ -60,7 +60,7 @@
                     se junta ao grupo. A primeira música foi lançada em 5 de Outubro de 1962, e assim começou a
                     história do Fab Four.
                 </p>
-            </section>
+            </section> -->
 
         </section>
 
@@ -208,15 +208,15 @@
             
         </section>
 
-        <section class="conteudo-banda">
+        <!-- <section class="conteudo-banda">
             <section class="imagem-banda">
                 <img src="img/imagembanda02.webp" alt="">
             </section>
 
             <section class="texto-banda">
-<!--                 <h1>
+                <h1>
                     Paramore
-                </h1> -->
+                </h1>
                 <section class="banda-logo">
                     <img src="img/paramorelogo.webp" alt="Logo da banda Paramore">
                 </section>
@@ -304,7 +304,7 @@
                 </section>
             </section>
 
-        </section>
+        </section> -->
 
         <section class="conteudo-banda">
             <section class="imagem-banda">
@@ -344,15 +344,17 @@
 
         </section>
 
+        {% for banda in nova_banda %}
         <section class="conteudo-banda">
             <section class="imagem-banda">
-                <img src="img/imagembanda04.webp" alt="">
+                <!-- <img src={{ url_for('static', filename="img/banda/imagembanda04.webp") }} alt=""> -->
+                <img alt="">
             </section>
 
-            <section class="texto-banda">
-<!--                 <h1>
+<!--             <section class="texto-banda">
+                <h1>
                     Low Roar
-                </h1> -->
+                </h1>
                 <section class="banda-logo">
                     <img src="img/logolowroar.webp" alt="Logo da banda Low Roar">
                 </section>
@@ -373,7 +375,22 @@
                     licenciarem a música para o jogo. Infelizmente, em 29 de Outubro de 2022 foi anunciado que o fundador e vocalista principal <b><em>Ryan Karazija</em></b>,
                     veio a falecer na idade de 40 anos, deixando um grande legando e influência.
                 </p>
+            </section> -->
+
+
+            <section class="texto-banda">
+                <!-- <h1>
+                    Low Roar
+                </h1> -->
+                <section class="banda-logo">
+                    <img src={{ url_for('static', filename=banda.logo.logo_url ) }} alt="{{ banda.logo.alt_text }}">
+                </section>
+                <p>
+                    {{ banda.historia.historia|safe }}
+                </p>
             </section>
+        </section>
+            {% endfor %}
 
         </section>
     </main>

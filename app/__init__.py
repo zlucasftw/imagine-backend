@@ -35,8 +35,10 @@ def create_app():
     db.init_app(app)
     
     # Importação dos Models
-    from .models.banda import Banda
-    from .models.banda_historia import BandaHistoria
+    from .models.banda import banda
+    from .models.banda_historia import banda_historia
+    from .models.banda_logo import banda_logo
+    from .models.banda_imagem import banda_imagem
     
     # Início: Importamos e registramos o Blueprint para as rotas
     
@@ -45,6 +47,9 @@ def create_app():
     
     from .routes.bandas_routes import bp_bandas
     app.register_blueprint(bp_bandas)
+    
+    from .routes.banda_imagem_routes import bp_bandas_imagem
+    app.register_blueprint(bp_bandas_imagem)
     
     # Fim: Importamos e registramos o Blueprint para as rotas    
     

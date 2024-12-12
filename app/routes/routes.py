@@ -1,13 +1,13 @@
 from flask import Blueprint, jsonify, render_template, request, make_response, session, url_for, flash, redirect
 # from sqlalchemy import Text
 # from sqlalchemy.engine import Engine
-from app.models.banda import Banda
+from app.models.banda import banda
 from app import create_engine, text
 # from werkzeug.utils import secure_filename
 from datetime import datetime
 from app import db
 
-bp = Blueprint("main", __name__, template_folder='../templates/')
+bp = Blueprint("main", __name__, template_folder='templates')
 
 # @bp.route("/", methods=['GET', 'POST'])
 # def index():
@@ -142,18 +142,18 @@ Realiza validação de login.
 @bp.route("/", methods=['GET'])
 def index():
 
-    bandas = Banda.query.all()
+    bandas = banda.query.all()
     bandas_resposta = []
     
-    engine = create_engine('mysql+pymysql://root:root@localhost:3306/imagine_backend')
+    # engine = create_engine('mysql+pymysql://root:root@localhost:3306/imagine_backend')
     
-    with engine.connect() as connection:
-        result = connection.execute(text("SELECT * FROM banda"))
-        for row in result:
-            print("Nome da banda: ", row.nome_banda)
+    # with engine.connect() as connection:
+    #     result = connection.execute(text("SELECT * FROM banda"))
+    #     for row in result:
+    #         print("Nome da banda: ", row.nome_banda)
 
-    for banda in bandas:
-        bandas_resposta.append(Banda.to_dict(banda))
+    for band in bandas:
+        bandas_resposta.append(banda.to_dict(band))
 
     print(bandas_resposta)
     
@@ -162,11 +162,23 @@ def index():
             "titulo": "This is Why",
             "ano": "2013",
             "banda": "Paramore",
-            "imagem_url": "static/img/albumcards01.webp",
+            "imagem_url": "app/static/img/cards/albumcards01.webp",
             "alt_text": "Imagem do album This is Why da banda Paramore"
         }
     ]
     return render_template('index.html', album_cards=album_cards)
+
+@bp.route("/dashboard", methods=['GET'])
+def dashboard():
+    return render_template('dashboard.html')
+
+# @bp.route("/bandas", methods=['GET'])
+# def bandas():
+    
+#     if request.method == 'GET':
+#         return render_template('bandas.html')
+#     else:
+#         return make_response("Não encontrado", 404)
 
 # @bp.route("/cards", methods=['POST'])
 # def listar_cards():
