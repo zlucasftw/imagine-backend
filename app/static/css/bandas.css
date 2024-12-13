@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap');
 
+body {
+    overflow-x: hidden;
+}
 
 #navbar nav .pagina-atual {
     background: linear-gradient(#000000, #000000) padding-box,

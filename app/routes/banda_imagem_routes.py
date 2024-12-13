@@ -11,7 +11,7 @@ from app import db
 
 bp_bandas_imagem = Blueprint("bandas_imagem", __name__, template_folder='templates')
 
-@bp_bandas_imagem.route("/bandas/imagens", methods=['GET'])
+@bp_bandas_imagem.route("/api/bandas/imagens", methods=['GET'])
 def listar_imagens():
     
     if request.method == 'GET':
@@ -43,16 +43,14 @@ def cadastrar_imagens():
             
             for imagem in imagens:
                 nova_imagem = banda_imagem(imagem_url=imagem['imagem_url'], alt_text=imagem['alt_text'], tipo_imagem=imagem['tipo_imagem'], id_banda=imagem['id_banda'])
-                nova_imagem_json.append(nova_imagem.to_dict())
                 db.session.add(nova_imagem)
+                nova_imagem_json.append(nova_imagem.to_dict())
             db.session.commit()
             
             return jsonify(nova_imagem_json)
             
         except Exception as exception:
-            
             db.session.rollback()
-            print(exception)
             return jsonify({ "Erro": "Erro na requisição! " }), 500
 
     else:

@@ -12,6 +12,7 @@ class banda(db.Model):
     fk_banda_banda_historia = db.relationship("banda_historia", back_populates="fk_banda_historia_banda", cascade='all, delete')
     fk_banda_banda_logo = db.relationship("banda_logo", back_populates="fk_banda_logo_banda", cascade='all, delete')
     fk_banda_banda_imagem = db.relationship("banda_imagem", back_populates="fk_banda_imagem_banda", cascade='all, delete')
+    fk_banda_album  = db.relationship("album", back_populates="fk_album_banda", cascade='all, delete')
     
     def to_dict(self):
         return {

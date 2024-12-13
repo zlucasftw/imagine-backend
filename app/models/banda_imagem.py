@@ -1,11 +1,11 @@
 from app import db
 from enum import Enum
 
-class categoria_imagem(Enum):
-    album = 'album'
-    banda = 'banda'
-    cards = 'cards'
-    marquee = 'marquee'
+class categoria_imagem(str, Enum):
+    album : str = 'album'
+    banda : str = 'banda'
+    cards : str = 'cards'
+    marque : str = 'marquee'
 
 class banda_imagem(db.Model):
     __tablename__= 'banda_imagem'
@@ -22,6 +22,6 @@ class banda_imagem(db.Model):
             "id_banda_imagem": self.id_banda_imagem,
             "imagem_url": self.imagem_url,
             "alt_text": self.alt_text,
-            "tipo_imagem": self.tipo_imagem.value,
+            "tipo_imagem": self.tipo_imagem,
             "id_banda": self.id_banda
         }

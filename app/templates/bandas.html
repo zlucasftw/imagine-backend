@@ -17,9 +17,10 @@
             <ul>
                 <li><a href="/">Ínicio</a></li>
                 <li class="pagina-atual"><a href="#">Bandas</a></li>
-                <li>Músicas</li>
                 <li>Filmes</li>
-                <li>Artistas</li>
+                <!-- <li>Músicas</li> -->
+                <!-- <li>Artistas</li> -->
+                <li><a href="/cadastrar_banda">Cadastrar</a></li>
                 <li>Sobre</li>
             </ul>
         </nav>
@@ -27,14 +28,14 @@
 
     <main>
         <section class="conteudo-banda">
-            <!-- <section class="imagem-banda">
+            <section class="imagem-banda">
                 <img src="/static/img/banda/bandaimg01.webp" alt="Imagem dos integrantes da banda The Beatles">
             </section>
 
             <section class="texto-banda">
-                <h1>
+                <!-- <h1>
                     The Beatles
-                </h1>
+                </h1> -->
                 <section class="banda-logo">
                     <img src="img/beatleslogo.webp" alt="Logo da banda The Beatles">
                 </section>
@@ -60,7 +61,7 @@
                     se junta ao grupo. A primeira música foi lançada em 5 de Outubro de 1962, e assim começou a
                     história do Fab Four.
                 </p>
-            </section> -->
+            </section>
 
         </section>
 
@@ -208,15 +209,15 @@
             
         </section>
 
-        <!-- <section class="conteudo-banda">
+        <section class="conteudo-banda">
             <section class="imagem-banda">
                 <img src="img/imagembanda02.webp" alt="">
             </section>
 
             <section class="texto-banda">
-                <h1>
+                <!-- <h1>
                     Paramore
-                </h1>
+                </h1> -->
                 <section class="banda-logo">
                     <img src="img/paramorelogo.webp" alt="Logo da banda Paramore">
                 </section>
@@ -304,11 +305,11 @@
                 </section>
             </section>
 
-        </section> -->
+        </section>
 
         <section class="conteudo-banda">
             <section class="imagem-banda">
-                <img src="img/imagembanda03.webp" alt="">
+                <img src={{ url_for('static', filename="img/banda/imagembanda03.webp")}} alt="">
             </section>
 
             <section class="texto-banda">
@@ -316,7 +317,7 @@
                     Metallica
                 </h1> -->
                 <section class="banda-logo">
-                    <img src="img/metallicalogo.webp" alt="Logo da banda Metallica">
+                    <img src={{ url_for('static', filename="img/logo/metallicalogo.webp")}} alt="Logo da banda Metallica">
                 </section>
                 <p>
                     A banda Metallica foi formada em 1981 pelo bateirista <b><em>Lars Ulrich</em></b>
@@ -344,12 +345,12 @@
 
         </section>
 
-        {% for bandas in nova_banda %}
+        {% for banda in nova_banda %}
         <section class="conteudo-banda">
             <section class="imagem-banda">
-                <img src={{ url_for('static', filename=bandas.imagem.imagem_url) }} alt={{ bandas.imagem.alt_text }}>
+                <img src={{ url_for('static', filename=banda.imagem.imagem_url) }} alt={{ banda.imagem.alt_text }}>
             </section>
-            <p>{{ bandas.imagem.tipo_banda }}</p>
+
 <!--        <section class="texto-banda">
                 <h1>
                     Low Roar
@@ -382,10 +383,10 @@
                     Low Roar
                 </h1> -->
                 <section class="banda-logo">
-                    <img src={{ url_for('static', filename=bandas.bandas.logo.logo_url) }} alt={{ bandas.bandas.logo.alt_text }}>
+                    <img src={{ url_for('static', filename=banda.bandas.logo.logo_url) }} alt={{ banda.bandas.logo.alt_text }}>
                 </section>
                 <p>
-                    {{ bandas.bandas.historia.historia|safe }}
+                    {{ banda.bandas.historia.historia|safe }}
                 </p>
             </section>
         </section>

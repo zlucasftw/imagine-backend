@@ -9,9 +9,29 @@
     /* overflow-x: hidden; */
 }
 
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: #000000;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #000000;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #FAF4EC;
+    border-radius: 0.5rem;
+    border: 1px solid #000000;
+}
+
 #navbar {
-    width: 1920px;
-    position: fixed;
+    width: 100vw;
+    /* position: fixed; */
     background-color: #000000;
     top: 0;
     height: 75px;

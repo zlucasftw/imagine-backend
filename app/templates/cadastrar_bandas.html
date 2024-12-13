@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagine</title>
+    <link rel="stylesheet" href={{ url_for('static', filename="css/header.css") }}>
+    <link rel="stylesheet" href={{ url_for('static', filename="css/formulario.css") }}>
+</head>
+<body>
+    
+    <header id="navbar">
+        <nav>
+            <h1 class="logo">
+                <a href="#">Imagine</a>
+            </h1>
+            <ul>
+                <li><a href="/">Ínicio</a></li>
+                <li><a href="/bandas">Bandas</a></li>
+                <li>Filmes</li>
+                <!-- <li>Músicas</li> -->
+                <!-- li>Artistas</li> -->
+                <li class="pagina-atual"><a href="/cadastrar_banda">Cadastrar</a></li>
+                <li>Sobre</li>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="formulario">
+                <h1>Cadastrar Banda</h1>
+                <form action="/cadastrar_banda" method="POST">
+                    <ul>
+                        <li>
+                            <input type="text" name="nome_banda" placeholder="Nome da banda" required>
+                        </li>
+                        <li>
+                            <input type="text" name="ano_formacao" placeholder="Ano formação" required>
+                        </li>
+                        <li>
+                            <input type="text" name="titulo_historia" placeholder="Título da história" required>
+                        </li>
+                        <li>
+                            <textarea name="historia_banda" placeholder="História da banda" required></textarea>
+                        </li>
+                        <li>
+                            <div class="input_arquivo">
+                                <p>Imagem do logo da banda</p>
+                                <label for="url_logo">Enviar imagem</label>
+                                <input type="file" name="url_logo" id="url_logo" required>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="text" name="alt_text_logo" placeholder="Texto alternativo da logo da banda" required>
+                        </li>
+                        <li>
+                            <div class="input_arquivo">
+                                <p>Imagem da banda</p>
+                                <label for="url_imagem">Enviar imagem</label>
+                                <input type="file" name="url_imagem" id="url_logo" required>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="text" name="alt_text_imagem" placeholder="Texto alternativo da imagem da banda" required>
+                        </li>
+                        <li>
+                            <div class="botao_enviar">
+                                <button type="submit">Enviar</button>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+            </section>
+        </main>
+
+</body>
+</html>
