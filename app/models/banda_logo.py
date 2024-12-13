@@ -6,7 +6,7 @@ class banda_logo(db.Model):
     logo_url = db.Column(db.String(255), nullable=False)
     alt_text = db.Column(db.String(255), nullable=False)
     
-    fk_banda_logo_banda = db.relationship("banda", back_populates="fk_banda_banda_logo")
+    fk_banda_logo_banda = db.relationship("banda", back_populates="fk_banda_banda_logo", cascade='all, delete')
     
     def to_dict(self):
         return {

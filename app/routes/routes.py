@@ -170,7 +170,35 @@ def index():
 
 @bp.route("/dashboard", methods=['GET'])
 def dashboard():
-    return render_template('dashboard.html')
+    
+    if request.method == 'GET':
+        
+        try:
+            
+            lista_bandas = db.session.execute(text(
+                "SELECT banda.id_banda, banda.nome_banda, banda.ano_formacao, banda_logo.logo_url, banda_logo.alt_text FROM banda JOIN banda_logo ON banda.id_banda_logo = banda_logo.id_banda_logo")).all()
+            
+            # print(lista_bandas)
+            
+            lista_bandas_json = []
+            
+            for bandas in lista_bandas:
+                lista_bandas_json.append({
+                    "id_banda": bandas.id_banda,
+                    "nome_banda": bandas.nome_banda,
+                    "ano_formacao": bandas.ano_formacao,
+                    "logo_url": bandas.logo_url,
+                    "alt_text": bandas.alt_text
+                })
+            
+            return jsonify(lista_bandas_json)
+            # return render_template('dashboard.html')
+            
+        except Exception as exception:
+            return make_response("Erro no servidor", 500)
+        
+    else:
+        return make_response("Não encontrado", 404)
 
 # @bp.route("/bandas", methods=['GET'])
 # def bandas():

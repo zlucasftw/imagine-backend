@@ -13,7 +13,7 @@ class banda_imagem(db.Model):
     imagem_url = db.Column(db.String(255), nullable=False)
     alt_text = db.Column(db.String(255), nullable=False)
     tipo_imagem = db.Column(db.Enum(categoria_imagem), nullable=False)
-    id_banda = db.Column(db.Integer, db.ForeignKey('banda.id_banda', name="fk_banda_imagem_banda"), nullable=False)
+    id_banda = db.Column(db.Integer, db.ForeignKey('banda.id_banda', name="fk_banda_imagem_banda", ondelete="CASCADE"), nullable=False)
     
     fk_banda_imagem_banda = db.relationship("banda", back_populates="fk_banda_banda_imagem", cascade="all, delete")
     

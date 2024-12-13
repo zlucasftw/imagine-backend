@@ -344,14 +344,13 @@
 
         </section>
 
-        {% for banda in nova_banda %}
+        {% for bandas in nova_banda %}
         <section class="conteudo-banda">
             <section class="imagem-banda">
-                <!-- <img src={{ url_for('static', filename="img/banda/imagembanda04.webp") }} alt=""> -->
-                <img alt="">
+                <img src={{ url_for('static', filename=bandas.imagem.imagem_url) }} alt={{ bandas.imagem.alt_text }}>
             </section>
-
-<!--             <section class="texto-banda">
+            <p>{{ bandas.imagem.tipo_banda }}</p>
+<!--        <section class="texto-banda">
                 <h1>
                     Low Roar
                 </h1>
@@ -383,14 +382,14 @@
                     Low Roar
                 </h1> -->
                 <section class="banda-logo">
-                    <img src={{ url_for('static', filename=banda.logo.logo_url ) }} alt="{{ banda.logo.alt_text }}">
+                    <img src={{ url_for('static', filename=bandas.bandas.logo.logo_url) }} alt={{ bandas.bandas.logo.alt_text }}>
                 </section>
                 <p>
-                    {{ banda.historia.historia|safe }}
+                    {{ bandas.bandas.historia.historia|safe }}
                 </p>
             </section>
         </section>
-            {% endfor %}
+        {% endfor %}
 
         </section>
     </main>

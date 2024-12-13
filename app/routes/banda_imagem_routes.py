@@ -50,9 +50,10 @@ def cadastrar_imagens():
             return jsonify(nova_imagem_json)
             
         except Exception as exception:
+            
             db.session.rollback()
             print(exception)
             return jsonify({ "Erro": "Erro na requisição! " }), 500
-        
+
     else:
         return jsonify({ "Erro": "Método não permitido" }), 405

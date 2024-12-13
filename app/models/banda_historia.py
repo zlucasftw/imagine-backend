@@ -6,7 +6,7 @@ class banda_historia(db.Model):
     titulo = db.Column(db.String(100), nullable=False)
     historia = db.Column(db.Text, nullable=False)
 
-    fk_banda_historia_banda = db.relationship("banda", back_populates="fk_banda_banda_historia")
+    fk_banda_historia_banda = db.relationship("banda", back_populates="fk_banda_banda_historia", cascade='all, delete')
     
     def to_dict(self):
         return {

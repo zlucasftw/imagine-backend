@@ -6,12 +6,12 @@ class banda(db.Model):
     nome_banda = db.Column(db.String(100), nullable=False)
     ano_formacao = db.Column(db.Integer, nullable=False)
     
-    id_banda_historia = db.Column(db.Integer, db.ForeignKey('banda_historia.id_banda_historia', name="fk_banda_banda_historia"), nullable=False)
-    id_banda_logo = db.Column(db.Integer, db.ForeignKey('banda_logo.id_banda_logo', name="fk_banda_banda_logo"), nullable=False)
+    id_banda_historia = db.Column(db.Integer, db.ForeignKey('banda_historia.id_banda_historia', name="fk_banda_banda_historia", ondelete="CASCADE"), nullable=False)
+    id_banda_logo = db.Column(db.Integer, db.ForeignKey('banda_logo.id_banda_logo', name="fk_banda_banda_logo", ondelete="CASCADE"), nullable=False)
     
-    fk_banda_banda_historia = db.relationship("banda_historia", back_populates="fk_banda_historia_banda", cascade="all, delete")
-    fk_banda_banda_logo = db.relationship("banda_logo", back_populates="fk_banda_logo_banda", cascade="all, delete")
-    fk_banda_banda_imagem = db.relationship("banda_imagem", back_populates="fk_banda_imagem_banda", cascade="all, delete")
+    fk_banda_banda_historia = db.relationship("banda_historia", back_populates="fk_banda_historia_banda", cascade='all, delete')
+    fk_banda_banda_logo = db.relationship("banda_logo", back_populates="fk_banda_logo_banda", cascade='all, delete')
+    fk_banda_banda_imagem = db.relationship("banda_imagem", back_populates="fk_banda_imagem_banda", cascade='all, delete')
     
     def to_dict(self):
         return {
