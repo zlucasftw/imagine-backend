@@ -44,13 +44,13 @@ def salvar_banda():
             imagem_banda.save(os.path.join(app.config['UPLOAD_FOLDER_IMAGEM'], filename_imagem))
             imagem_url = filename_imagem.lstrip("app/static/")
 
-            nova_banda_historia = banda_historia(titulo_historia=titulo_historia, historia_banda=historia_banda)
+            # nova_banda_historia = banda_historia(titulo_historia=titulo_historia, historia_banda=historia_banda)
             
-            nova_banda_logo = banda_logo(logo_url=logo_url, alt_text=alt_text_logo)
+            # nova_banda_logo = banda_logo(logo_url=logo_url, alt_text=alt_text_logo)
             
-            nova_banda = banda(nome_banda=nome_banda, ano_formacao=ano_formacao)
+            # nova_banda = banda(nome_banda=nome_banda, ano_formacao=ano_formacao)
             
-            nova_banda_imagem = banda_imagem(imagem_url=imagem_url, alt_text=alt_text_imagem, tipo_imagem="banda")
+            # nova_banda_imagem = banda_imagem(imagem_url=imagem_url, alt_text=alt_text_imagem, tipo_imagem="banda")
             
             return jsonify({
                 "nome_banda": nome_banda,
