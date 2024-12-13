@@ -37,7 +37,7 @@ def pagina_bandas():
                 return jsonify({ "Erro": "Não encontrado" }), 404
             
             # return jsonify(bandas_json)
-            return render_template("bandas.html", nova_banda=bandas_json)
+            return render_template("bandas.html", nova_banda=jsonify(bandas_json))
             
         except Exception as exception:
             print(exception)
